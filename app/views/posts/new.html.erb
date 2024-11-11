@@ -1,0 +1,7 @@
+<h1>新規投稿</h1>
+<%= form_with model: @post, url: posts_create_path do |f| %>
+    <label for="content">content</label>
+    <%= f.text_field :content %>
+
+    <%= f.submit :投稿 %>
+<% end %>

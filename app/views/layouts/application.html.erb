@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if @current_user %>
+      <%= @current_user.name %>
+      <%= link_to "投稿一覧", posts_index_path %>
+      <%= link_to "新規投稿", posts_new_path %>
+      <%= link_to "ユーザー一覧", users_index_path %>
+      <%= button_to "ログアウト", logout_path %>
+    <% else %>
+      <%= link_to "新規登録", users_new_path %>
+      <%= link_to "ログイン", login_form_path %>
+    <% end %>
+      <%= yield %>
+  </body>
+</html>

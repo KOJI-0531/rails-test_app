@@ -1,0 +1,13 @@
+<h1>ログイン画面</h1>
+<%= form_with model: User.new, url: login_path do |f| %>
+    <label for="name">name</label>
+    <%= f.text_field :name %>
+
+    <label for="email">email</label>
+    <%= f.text_field :email %>
+
+    <label for="password">password</label>
+    <%= f.text_field :password, type: "password" %>
+
+    <%= f.submit :ログイン %>
+<% end %>

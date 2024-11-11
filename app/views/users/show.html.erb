@@ -1,0 +1,8 @@
+<h1>ユーザー詳細</h1>
+<%= @user.email %>
+<%= link_to "編集", users_edit_path %>
+<%= button_to "削除", users_destroy_path %>
+
+<% @user.posts.each do |post| %>
+    <%= post.content %>
+<% end %>
